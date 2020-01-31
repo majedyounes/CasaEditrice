@@ -1,0 +1,2 @@
+P;Titolo terza pubblicazione;R;Nome terzo volume;2011
+A;Davide;Gialli;davide.gialli@polito.it;60

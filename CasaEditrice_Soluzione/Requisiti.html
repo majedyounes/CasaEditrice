@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<body>
+<h1 style="text-align: center;">Casa editrice<br>
+</h1>
+Sviluppare un'applicazione che consenta di gestire il catalogo di una casa editrice specializzata in pubblicazioni scientifiche. 
+<br>
+Tutte le classi devono essere nel package "casaeditrice".<br>
+
+<hr style="width: 100%; height: 2px;">
+
+<h2>R1 - Autori</h2>
+La classe principale con cui interagire è CasaEditrice.<BR> 
+Mediante il metodo <B>definisciAutore()</B> è possibile definire un nuovo autore, specificandone nome, cognome ed indirizzo email.<BR> 
+Il metodo associa all'autore un codice numerico generato automaticamente in maniera progressiva a partire da 10000 e restituisce un oggetto della classe Autore. Si assuma che il programma non debba gestire casi di omonimia.<BR>
+La classe Autore offre i metodi getter per accedere al nome, al cognome, all'indirizzo email ed al codice numerico dell'autore.<BR>
+Il metodo <B>elencoAutori()</B> restituisce un elenco di autori ordinati eticamente per cognome e nome. <BR>
+E' possibile accedere ad un particolare autore mediante due varianti del metodo <B>getAutore()</B>. La prima riceve come parametro il codice numerico associato all'autore, la seconda nome e cognome. Entrambe restituiscono un oggetto della classe Autore. <BR>
+ 
+<h2>R2 - Pubblicazioni</h2>
+Il programma permette di gestire due tipologie di pubblicazioni, ovvero articoli su rivista e articoli in atti di conferenza, rappresentate da altrettante classi (rispettivamente Rivista e Conferenza).<BR> 
+Ogni pubblicazione è caratterizzata dal titolo, dalla tipologia, dal nome del volume e dall'anno di stampa.<BR> 
+Per le pubblicazioni su rivista il metodo <B>setIsbn()</B> permette di specificare il codice ISBN della rivista stessa. <BR>
+Per le pubblicazioni in atti di conferenza, il metodo <B>setLuogo()</B> permette di specificare il luogo in cui la conferenza si è svolta. <BR>
+La classe Pubblicazione offre i metodi getter per accedere al titolo, al nome del volume ed all'anno di stampa della pubblicazione.<BR>
+Mediante il metodo <B>aggiungiPubblicazione()</B> della classe Autore è possibile aggiungere una nuova pubblicazione al catalogo, per la quale l'autore in esame viene identificato come proprietario.<BR> 
+Il metodo consente di specificare per il proprietario il contributo individuale alla realizzazione della pubblicazione stessa (espresso in termini percentuali attraverso un valore intero). Il metodo restituisce un oggetto della classe Pubblicazione.<BR>
+Il metodo <B>elencoPubblicazioni()</B> della classe Autore consente di ottenere l'elenco di tutte le pubblicazioni dell'autore, ordinate cronologicamente a partire dalla più recente.<BR>
+Il metodo <B>getProprietario()</B> della classe Pubblicazione restituisce un oggetto della classe Autore corrispondente al proprietario della pubblicazione.
+ 
+
+<h2>R3 - Coautori</h2>
+Per ogni pubblicazione è possibile specificare un certo numero di coautori mediante il metodo <B>aggiungiCoautori()</B>. <BR>
+Il metodo riceve un riferimento ad un oggetto della classe Autore ed una percentuale corrispondente al contributo individuale del coautore stesso (potenzialmente diverso da una pubblicazione all'altra).<BR> 
+Nel caso il cui si cerchi di aggiungere più di una volta lo stesso coautore viene scatenata una eccezione di tipo AutoreDuplicatoException.<BR>
+Mediante il metodo <B>elencoAutori()</B> della classe Pubblicazione è possibile ottenere l'elenco degli autori della pubblicazione stessa. L'elenco riporta, dapprima, il proprietario della pubblicazione e, a seguire, gli altri autori in ordine alfabetico.  <BR>
+Attraverso il metodo <B>getContributo()</B> della classe Pubblicazione è possibile ottenere la percentuale corrispondente al contributo individuale di un determinato autore per la pubblicazione in questione. Il metodo riceve come parametro un riferimento ad un oggetto di classe Autore e restituisce un valore intero.<BR>
+Il metodo <B>pubblicazioniAutore()</B> della classe CasaEditrice riceve come parametri il nome ed il cognome di un autore e restituisce l'elenco delle pubblicazioni dell'autore stesso. L'elenco è ordinato cronologicamente a partire dalla pubblicazione più recente. Nel caso in cui l'autore non sia definito viene scantenata una eccezione di tipo AutoreInesistenteException.
+
+<h2>R4 - Caricamento da file </h2>
+Il metodo <B>leggiPubblicazioni()</B> della classe CasaEditrice permette di leggere da file le informazioni relative alle pubblicazioni.<BR>
+Il metodo riceve come parametro il percorso di un file testuale organizzato a righe, dove ogni riga può riportare le informazioni relative ad una pubblicazione o ad un autore. <BR>
+Le righe relative ad una pubblicazione iniziano con la lettera "P", seguita dal titolo, dalla tipologia, dal nome del volume e dall'anno di stampa della pubblicazione stessa. Per la tipologia, "R" indica un articolo su rivista, "C" un articolo negli atti di una conferenza. <BR>
+Ogni riga di tipo pubblicazione è seguita da una o più righe di tipo autore, che riportano le informazioni relative agli autori della pubblicazione in questione. La prima riga rappresenta il proprietario, le successive i coautori.<BR>
+Le righe relative ad un autore iniziano con la lettera "A", seguita dal nome, dal cognome, dall'indirizzo email e dal contributo individuale del particolare autore. <BR>Gli elementi di ciascuna riga sono separati gli uni dagli altri tramite il carattere ";". <BR>
+Si assuma che il file non possa contenere errori e che quindi tutte le righe rispettino il formato sopra descritto.
+
+
+
+<hr style="width: 100%; height: 2px;"><br>
+</body>
+</html>

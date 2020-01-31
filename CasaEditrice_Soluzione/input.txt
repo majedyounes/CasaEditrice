@@ -1,0 +1,5 @@
+P;Titolo terza pubblicazione;R;Nome terzo volume;2011
+A;Davide;Gialli;davide.gialli@polito.it;60
+A;Angelo;Neri;angelo.neri@poliba.it;40
+P;Titolo quarta pubblicazione;C;Nome quarto volume;2007
+A;Mario;Rossi;mario.rossi@polito.it;100
